@@ -7,14 +7,12 @@
  * # SearchCtrl
  * Controller of the coursExoApp
  */
-angular.module('coursExoApp')
+angular.module('cineAngularApp')
     .controller('SearchCtrl', function ($scope, $routeParams, serviceAjax) {
         $scope.query = $routeParams.query;
         $scope.currentPage = 1;
         $scope.totalPages = 0;
         $scope.loading = true;
-        $scope.orderByPredicate = "title";
-        $scope.orderByReverse = false;
 
         $scope.loadMovies = function(){
             $scope.loading = true;
@@ -29,16 +27,5 @@ angular.module('coursExoApp')
             $scope.loadMovies();
         };
 
-        $scope.clickPredicateName = function(){
-            $scope.orderByReverse = !$scope.orderByReverse;
-            $scope.orderByPredicate = 'title';
-        }
-
-        $scope.clickPredicateRate = function(){
-            $scope.orderByReverse = !$scope.orderByReverse;
-            $scope.orderByPredicate = 'vote_average';
-        }
-
         $scope.loadMovies();
     });
-

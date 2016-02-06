@@ -3,7 +3,7 @@
 describe('Directive: loading', function () {
 
     // load the directive's module
-    beforeEach(module('coursExoApp'));
+    beforeEach(module('cineAngularApp'));
 
     var element,
         scope;

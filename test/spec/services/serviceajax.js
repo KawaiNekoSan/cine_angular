@@ -3,7 +3,7 @@
 describe('Service: serviceAjax', function () {
 
     // load the service's module
-    beforeEach(module('coursExoApp'));
+    beforeEach(module('cineAngularApp'));
 
     // instantiate service
     var serviceAjax, httpBackend;

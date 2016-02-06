@@ -7,7 +7,7 @@
  * # HeaderCtrl
  * Controller of the coursExoApp
  */
-angular.module('coursExoApp')
+angular.module('cineAngularApp')
     .controller('HeaderCtrl', function ($scope, $location) {
         $scope.query = ""
         $scope.searchAction = function(){

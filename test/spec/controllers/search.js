@@ -3,7 +3,7 @@
 describe('Controller: SearchCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('coursExoApp'));
+    beforeEach(module('cineAngularApp'));
 
     var SearchCtrl,
         scope, serviceAjax;
@@ -19,7 +19,7 @@ describe('Controller: SearchCtrl', function () {
     }));
 
     it('should set $scope.movies and $scope.total_pages when calling $scope.loadMovies', function () {
-        spyOn(serviceAjax, 'search').andCallFake(function () {
+        spyOn(serviceAjax, 'search').and.callFake(function () {
             return{
                 success: function (callback) {
                     callback({"results": [{}], "total_pages": 10})
@@ -38,23 +38,5 @@ describe('Controller: SearchCtrl', function () {
         scope.pageChanged();
 
         expect(scope.loadMovies).toHaveBeenCalled();
-    });
-
-    it('should set $scope.orderByReverse and $scope.orderByPredicate when calling $scope.clickPredicateName function', function () {
-        scope.orderByReverse = true;
-
-        scope.clickPredicateName();
-
-        expect(scope.orderByPredicate).toBe('title');
-        expect(scope.orderByReverse).toBe(false);
-    });
-
-    it('should set $scope.orderByReverse and $scope.orderByPredicate when calling $scope.clickPredicateRate function', function () {
-        scope.orderByReverse = true;
-
-        scope.clickPredicateRate();
-
-        expect(scope.orderByPredicate).toBe('vote_average');
-        expect(scope.orderByReverse).toBe(false);
     });
 });

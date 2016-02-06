@@ -3,7 +3,7 @@
 describe('Controller: InfoCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('coursExoApp'));
+    beforeEach(module('cineAngularApp'));
 
     var InfoCtrl,
         scope, serviceAjax;
@@ -18,7 +18,7 @@ describe('Controller: InfoCtrl', function () {
         });
     }));
     it('should set $scope.movie when calling $scope.infoMovie', function () {
-        spyOn(serviceAjax, 'info').andCallFake(function () {
+        spyOn(serviceAjax, 'info').and.callFake(function () {
             return{
                 success: function (callback) {
                     callback({"title" : "test"})

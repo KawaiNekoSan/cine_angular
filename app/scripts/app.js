@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('coursExoApp', [
+  .module('cineAngularApp', [
     'ngRoute', 'ui.bootstrap'
   ])
   .config(function ($routeProvider) {

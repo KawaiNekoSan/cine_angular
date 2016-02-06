@@ -3,7 +3,7 @@
 describe('Controller: PopularCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('coursExoApp'));
+    beforeEach(module('cineAngularApp'));
 
     var PopularCtrl,
         scope, serviceAjax;
@@ -20,7 +20,7 @@ describe('Controller: PopularCtrl', function () {
 
     }));
     it('should set $scope.movies and $scope.total_pages when calling $scope.loadMovies', function () {
-        spyOn(serviceAjax, 'popular').andCallFake(function () {
+        spyOn(serviceAjax, 'popular').and.callFake(function () {
             return{
                 success: function (callback) {
                     callback({"results": [
@@ -44,7 +44,7 @@ describe('Controller: PopularCtrl', function () {
 
         expect(scope.loadMovies).toHaveBeenCalled();
     });
-
+    
     it('should set $scope.orderByReverse and $scope.orderByPredicate when calling $scope.clickPredicateName function', function () {
         scope.orderByReverse = true;
 
@@ -62,4 +62,6 @@ describe('Controller: PopularCtrl', function () {
         expect(scope.orderByPredicate).toBe('vote_average');
         expect(scope.orderByReverse).toBe(false);
     });
+    
+    
 });

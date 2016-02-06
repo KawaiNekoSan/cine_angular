@@ -3,7 +3,7 @@
 describe('Controller: HeaderCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('coursExoApp'));
+    beforeEach(module('cineAngularApp'));
 
     var HeaderCtrl,
         scope, location;

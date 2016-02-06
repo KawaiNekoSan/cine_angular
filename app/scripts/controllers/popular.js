@@ -7,7 +7,7 @@
  * # PopularCtrl
  * Controller of the coursExoApp
  */
-angular.module('coursExoApp')
+angular.module('cineAngularApp')
   .controller('PopularCtrl', function ($scope, serviceAjax) {
         $scope.currentPage = 1;
         $scope.totalPages = 0;
@@ -17,10 +17,12 @@ angular.module('coursExoApp')
 
         $scope.loadMovies = function(){
             $scope.loading = true;
-            serviceAjax.popular($scope.currentPage).success(function(data){
+            serviceAjax.popular($scope.currentPage).then(function(data){
+                data = data.data;
                 $scope.loading = false;
                 $scope.movies = data.results;
                 $scope.totalPages = data.total_pages;
+                $scope.loading = false;
             });
         };
 
